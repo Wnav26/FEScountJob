@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440" height="800" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g opacity="0.5">
+    <circle cx="100" cy="100" r="10" fill="white" fill-opacity="0.2"/>
+    <circle cx="300" cy="150" r="8" fill="white" fill-opacity="0.2"/>
+    <circle cx="500" cy="200" r="12" fill="white" fill-opacity="0.2"/>
+    <circle cx="700" cy="100" r="9" fill="white" fill-opacity="0.2"/>
+    <circle cx="900" cy="250" r="11" fill="white" fill-opacity="0.2"/>
+    <circle cx="1100" cy="150" r="10" fill="white" fill-opacity="0.2"/>
+    <circle cx="1300" cy="200" r="8" fill="white" fill-opacity="0.2"/>
+    <circle cx="200" cy="300" r="12" fill="white" fill-opacity="0.2"/>
+    <circle cx="400" cy="350" r="9" fill="white" fill-opacity="0.2"/>
+    <circle cx="600" cy="300" r="11" fill="white" fill-opacity="0.2"/>
+    <circle cx="800" cy="350" r="10" fill="white" fill-opacity="0.2"/>
+    <circle cx="1000" cy="300" r="8" fill="white" fill-opacity="0.2"/>
+    <circle cx="1200" cy="350" r="12" fill="white" fill-opacity="0.2"/>
+    <circle cx="1400" cy="300" r="9" fill="white" fill-opacity="0.2"/>
+    <circle cx="100" cy="450" r="11" fill="white" fill-opacity="0.2"/>
+    <circle cx="300" cy="500" r="10" fill="white" fill-opacity="0.2"/>
+    <circle cx="500" cy="450" r="8" fill="white" fill-opacity="0.2"/>
+    <circle cx="700" cy="500" r="12" fill="white" fill-opacity="0.2"/>
+    <circle cx="900" cy="450" r="9" fill="white" fill-opacity="0.2"/>
+    <circle cx="1100" cy="500" r="11" fill="white" fill-opacity="0.2"/>
+    <circle cx="1300" cy="450" r="10" fill="white" fill-opacity="0.2"/>
+    <circle cx="200" cy="600" r="8" fill="white" fill-opacity="0.2"/>
+    <circle cx="400" cy="650" r="12" fill="white" fill-opacity="0.2"/>
+    <circle cx="600" cy="600" r="9" fill="white" fill-opacity="0.2"/>
+    <circle cx="800" cy="650" r="11" fill="white" fill-opacity="0.2"/>
+    <circle cx="1000" cy="600" r="10" fill="white" fill-opacity="0.2"/>
+    <circle cx="1200" cy="650" r="8" fill="white" fill-opacity="0.2"/>
+    <circle cx="1400" cy="600" r="12" fill="white" fill-opacity="0.2"/>
+    <circle cx="100" cy="750" r="9" fill="white" fill-opacity="0.2"/>
+    <circle cx="300" cy="700" r="11" fill="white" fill-opacity="0.2"/>
+    <circle cx="500" cy="750" r="10" fill="white" fill-opacity="0.2"/>
+    <circle cx="700" cy="700" r="8" fill="white" fill-opacity="0.2"/>
+    <circle cx="900" cy="750" r="12" fill="white" fill-opacity="0.2"/>
+    <circle cx="1100" cy="700" r="9" fill="white" fill-opacity="0.2"/>
+    <circle cx="1300" cy="750" r="11" fill="white" fill-opacity="0.2"/>
+  </g>
+  <g opacity="0.3">
+    <path d="M0 100L1440 100" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+    <path d="M0 200L1440 200" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+    <path d="M0 300L1440 300" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+    <path d="M0 400L1440 400" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+    <path d="M0 500L1440 500" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+    <path d="M0 600L1440 600" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+    <path d="M0 700L1440 700" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+    <path d="M100 0L100 800" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+    <path d="M200 0L200 800" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+    <path d="M300 0L300 800" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+    <path d="M400 0L400 800" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+    <path d="M500 0L500 800" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+    <path d="M600 0L600 800" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+    <path d="M700 0L700 800" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+    <path d="M800 0L800 800" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+    <path d="M900 0L900 800" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+    <path d="M1000 0L1000 800" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+    <path d="M1100 0L1100 800" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+    <path d="M1200 0L1200 800" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+    <path d="M1300 0L1300 800" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+    <path d="M1400 0L1400 800" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+  </g>
+</svg>
