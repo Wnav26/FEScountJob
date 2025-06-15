@@ -1,8 +1,10 @@
 import { callUpdateResumeStatus } from "@/config/api";
 import { IResume } from "@/types/backend";
-import { Badge, Button, Descriptions, Drawer, Form, Select, message, notification } from "antd";
+import { Badge, Button, Descriptions, Drawer, Form, Select, message, notification, Space } from "antd";
 import dayjs from 'dayjs';
 import { useState, useEffect } from 'react';
+import { CalendarOutlined } from '@ant-design/icons';
+import ScheduleInterview from "../interview/ScheduleInterview";
 const { Option } = Select;
 
 interface IProps {
@@ -16,6 +18,7 @@ const ViewDetailResume = (props: IProps) => {
     const [isSubmit, setIsSubmit] = useState<boolean>(false);
     const { onClose, open, dataInit, setDataInit, reloadTable } = props;
     const [form] = Form.useForm();
+    const [isScheduleModalOpen, setIsScheduleModalOpen] = useState<boolean>(false);
 
     const handleChangeStatus = async () => {
         setIsSubmit(true);
@@ -55,11 +58,18 @@ const ViewDetailResume = (props: IProps) => {
                 maskClosable={false}
                 destroyOnClose
                 extra={
-
-                    <Button loading={isSubmit} type="primary" onClick={handleChangeStatus}>
-                        Change Status
-                    </Button>
-
+                    <Space>
+                        <Button 
+                            icon={<CalendarOutlined />} 
+                            onClick={() => setIsScheduleModalOpen(true)}
+                            disabled={dataInit?.status !== 'APPROVED' && dataInit?.status !== 'REVIEWING'}
+                        >
+                            Schedule Interview
+                        </Button>
+                        <Button loading={isSubmit} type="primary" onClick={handleChangeStatus}>
+                            Change Status
+                        </Button>
+                    </Space>
                 }
             >
                 <Descriptions title="" bordered column={2} layout="vertical">
@@ -97,6 +107,18 @@ const ViewDetailResume = (props: IProps) => {
 
                 </Descriptions>
             </Drawer>
+            
+            <ScheduleInterview
+                open={isScheduleModalOpen}
+                onClose={() => setIsScheduleModalOpen(false)}
+                resumeId={dataInit?.id}
+                resumeEmail={dataInit?.email}
+                jobName={dataInit?.job?.name}
+                onSuccess={() => {
+                    message.success("Đã lên lịch phỏng vấn thành công!");
+                    reloadTable();
+                }}
+            />
         </>
     )
 }

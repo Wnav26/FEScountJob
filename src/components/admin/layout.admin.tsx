@@ -10,6 +10,7 @@ import {
     AliwangwangOutlined,
     BugOutlined,
     ScheduleOutlined,
+    VideoCameraOutlined,
 } from '@ant-design/icons';
 import { Layout, Menu, Dropdown, Space, message, Avatar, Button } from 'antd';
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
@@ -108,7 +109,16 @@ const LayoutAdmin = () => {
                     key: '/admin/role',
                     icon: <ExceptionOutlined />
                 }] : []),
-
+                
+                {
+                    label: <Link to='/admin/interview'>Interview</Link>,
+                    key: '/admin/interview',
+                    icon: <VideoCameraOutlined />,
+                    // Chỉ hiển thị cho HR và SUPER_ADMIN
+                    style: { 
+                      display: user?.role?.name === 'HR' || user?.role?.name === 'SUPER_ADMIN' ? 'block' : 'none' 
+                    }
+                },
 
 
             ];

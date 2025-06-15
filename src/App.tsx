@@ -22,6 +22,7 @@ import PermissionPage from './pages/admin/permission';
 import ResumePage from './pages/admin/resume';
 import RolePage from './pages/admin/role';
 import UserPage from './pages/admin/user';
+import InterviewPage from './pages/admin/interview';
 import { fetchAccount } from './redux/slice/accountSlide';
 import LayoutApp from './components/share/layout.app';
 import ViewUpsertJob from './components/admin/job/upsert.job';
@@ -30,6 +31,8 @@ import ClientJobDetailPage from './pages/job/detail';
 import ClientCompanyPage from './pages/company';
 import ClientCompanyDetailPage from './pages/company/detail';
 import JobTabs from './pages/admin/job/job.tabs';
+import JoinInterviewPage from './pages/interview/join';
+import DirectInterviewPage from './pages/interview/direct';
 
 const LayoutClient = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -78,7 +81,9 @@ export default function App() {
         { path: "job", element: <ClientJobPage /> },
         { path: "job/:id", element: <ClientJobDetailPage /> },
         { path: "company", element: <ClientCompanyPage /> },
-        { path: "company/:id", element: <ClientCompanyDetailPage /> }
+        { path: "company/:id", element: <ClientCompanyDetailPage /> },
+        { path: "interview/join/:id", element: <JoinInterviewPage /> },
+        { path: "interview/direct", element: <DirectInterviewPage /> }
       ],
     },
 
@@ -141,6 +146,13 @@ export default function App() {
           element:
             <ProtectedRoute>
               <RolePage />
+            </ProtectedRoute>
+        },
+        {
+          path: "interview",
+          element:
+            <ProtectedRoute requiredRoles={['HR', 'SUPER_ADMIN']}>
+              <InterviewPage />
             </ProtectedRoute>
         }
       ],
