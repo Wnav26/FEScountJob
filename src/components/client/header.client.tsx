@@ -146,7 +146,7 @@ const Header = (props: any) => {
                                             <Button type="text" onClick={() => navigate('/login')} className={styles['login-btn']}>
                                                 Đăng Nhập
                                             </Button>
-                                            <Button type="primary" onClick={() => navigate('/login')} className={styles['register-btn']}>
+                                            <Button type="primary" onClick={() => navigate('/register')} className={styles['register-btn']}>
                                                 Đăng Ký
                                             </Button>
                                         </div>

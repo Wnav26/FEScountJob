@@ -1,7 +1,7 @@
 import { callFetchJob } from '@/config/api';
 import { convertSlug, getLocationName } from '@/config/utils';
 import { IJob } from '@/types/backend';
-import { EnvironmentOutlined, ThunderboltOutlined, ArrowRightOutlined, FireOutlined } from '@ant-design/icons';
+import { EnvironmentOutlined, ThunderboltOutlined, ArrowRightOutlined, FireOutlined, HistoryOutlined, CalendarOutlined } from '@ant-design/icons';
 import { Card, Col, Empty, Pagination, Row, Spin, Tag } from 'antd';
 import { useState, useEffect } from 'react';
 import { isMobile } from 'react-device-detect';
@@ -177,6 +177,12 @@ const JobCard = (props: IProps) => {
                                                     <div className={styles["job-salary"]}>
                                                         <ThunderboltOutlined className={styles["job-icon"]} />
                                                         <span>{(item.salary + "")?.replace(/\B(?=(\d{3})+(?!\d))/g, ',')} đ</span>
+                                                    </div>
+                                                    <div className={styles["job-date"]} style={{ display: 'flex', alignItems: 'center', marginTop: '4px' }}>
+                                                        <CalendarOutlined className={styles["job-icon"]} style={{ color: '#1677ff', fontSize: '14px', marginRight: '5px' }} />
+                                                        <span style={{ fontWeight: '500', fontSize: '13px' }}>
+                                                            {dayjs(item.startDate).format('DD/MM/YYYY')} - {dayjs(item.endDate).format('DD/MM/YYYY')}
+                                                        </span>
                                                     </div>
                                                 </div>
                                                 <div className={styles["job-footer"]}>

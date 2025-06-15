@@ -66,7 +66,8 @@ const ViewUpsertJob = (props: any) => {
                             value: `${res.data.company?.id}@#$${res.data.company?.logo}` as string,
                             key: res.data.company?.id
                         },
-                        skills: temp
+                        skills: temp,
+                        description: res.data.description
                     })
                 }
             }
@@ -128,7 +129,7 @@ const ViewUpsertJob = (props: any) => {
                 salary: values.salary,
                 quantity: values.quantity,
                 level: values.level,
-                description: value,
+                description: values.description || value, // Sử dụng giá trị từ form hoặc từ state
                 startDate: /[0-9]{2}[/][0-9]{2}[/][0-9]{4}$/.test(values.startDate) ? dayjs(values.startDate, 'DD/MM/YYYY').toDate() : values.startDate,
                 endDate: /[0-9]{2}[/][0-9]{2}[/][0-9]{4}$/.test(values.endDate) ? dayjs(values.endDate, 'DD/MM/YYYY').toDate() : values.endDate,
                 active: values.active,
@@ -161,7 +162,7 @@ const ViewUpsertJob = (props: any) => {
                 salary: values.salary,
                 quantity: values.quantity,
                 level: values.level,
-                description: value,
+                description: values.description || value, // Sử dụng giá trị từ form hoặc từ state
                 startDate: dayjs(values.startDate, 'DD/MM/YYYY').toDate(),
                 endDate: dayjs(values.endDate, 'DD/MM/YYYY').toDate(),
                 active: values.active
@@ -314,40 +315,32 @@ const ViewUpsertJob = (props: any) => {
 
                                 </Col>
                             }
-
-                        </Row>
-                        <Row gutter={[20, 20]}>
                             <Col span={24} md={6}>
                                 <ProFormDatePicker
                                     label="Ngày bắt đầu"
                                     name="startDate"
-                                    normalize={(value) => value && dayjs(value, 'DD/MM/YYYY')}
+                                    placeholder="Chọn ngày bắt đầu"
+                                    rules={[{ required: true, message: 'Vui lòng chọn ngày bắt đầu!' }]}
                                     fieldProps={{
-                                        format: 'DD/MM/YYYY',
-
+                                        format: "DD/MM/YYYY"
                                     }}
-                                    rules={[{ required: true, message: 'Vui lòng chọn ngày cấp' }]}
-                                    placeholder="dd/mm/yyyy"
                                 />
                             </Col>
                             <Col span={24} md={6}>
                                 <ProFormDatePicker
                                     label="Ngày kết thúc"
                                     name="endDate"
-                                    normalize={(value) => value && dayjs(value, 'DD/MM/YYYY')}
+                                    placeholder="Chọn ngày kết thúc"
+                                    rules={[{ required: true, message: 'Vui lòng chọn ngày kết thúc!' }]}
                                     fieldProps={{
-                                        format: 'DD/MM/YYYY',
-
+                                        format: "DD/MM/YYYY"
                                     }}
-                                    // width="auto"
-                                    rules={[{ required: true, message: 'Vui lòng chọn ngày cấp' }]}
-                                    placeholder="dd/mm/yyyy"
                                 />
                             </Col>
                             <Col span={24} md={6}>
                                 <ProFormSwitch
-                                    label="Trạng thái"
                                     name="active"
+                                    label="Trạng thái"
                                     checkedChildren="ACTIVE"
                                     unCheckedChildren="INACTIVE"
                                     initialValue={true}
@@ -365,7 +358,10 @@ const ViewUpsertJob = (props: any) => {
                                     <ReactQuill
                                         theme="snow"
                                         value={value}
-                                        onChange={setValue}
+                                        onChange={(content) => {
+                                            setValue(content);
+                                            form.setFieldsValue({ description: content });
+                                        }}
                                     />
                                 </ProForm.Item>
                             </Col>

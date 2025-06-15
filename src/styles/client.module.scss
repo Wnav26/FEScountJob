@@ -179,8 +179,8 @@
                 }
 
                 .register-btn {
-                    background-color: #fff;
-                    color: #1677ff;
+                    background-color: #1677ff;
+                    color: #fff;
                     border: none;
                     border-radius: 6px;
                     font-weight: 600;
@@ -188,7 +188,7 @@
                     transition: all 0.3s ease;
 
                     &:hover {
-                        background-color: #f0f0f0;
+                        background-color: #0958d9;
                         transform: translateY(-1px);
                         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
                     }
